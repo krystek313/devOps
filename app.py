@@ -11,6 +11,6 @@ def index():
 
     if cpu_percent > 80 or mem_percent > 80:
         Message = "High cpu or memory usage"
-    return render_template("index.html",cpu_metric=cpu_percent,mem_metric=mem_percent,message=Message)
+    return render_template("index.html",cpu_metric=cpu_percent,mem_metric=mem_percent,message=Message) 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0' )
