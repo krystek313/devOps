@@ -1,7 +1,6 @@
 FROM python:3
 
 
-
 #WORKDIR /home/admine/Documents/Aplikacja
 
 RUN mkdir -p /home/app
@@ -13,7 +12,7 @@ WORKDIR /home/app
 #RUN pip install -r requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV FLASK_RUN_HOST=0.0.0.0
+#ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 5000
 
