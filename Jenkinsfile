@@ -1,11 +1,15 @@
 pipeline 
 {
-    agent {dockerfile true}
+    agent any
 
     stages {
-        stage('Build') {
+        stage('Build docker image') {
             steps {
                 echo 'I am building project right now '
+                scripts{
+                    sh 'docker build -t testowy/tag:1.0 .'
+                }
+
             }
         }
             stage('Test') {
