@@ -14,16 +14,23 @@ pipeline
         }
             stage('Test') {
             steps {
-                echo 'teraz lepiej ?'
+                sh 'python3 test.py'
             }
         }   
         stage('Deploy') {
             steps {
                 script{
+                    sh 'docker login -u krystiandzydzy -p KrDz2020#'
                     sh 'docker push krystiandzydzy/memorycpu:1.0'
                 }
             }
         }
+        stage("czyszczenie"){
+            steps{
+                sh 'docker logout'
+            }
+        }
+
     }
     
 }
