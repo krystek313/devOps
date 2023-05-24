@@ -7,7 +7,7 @@ pipeline
             steps {
                  
                 script{
-                    sh 'docker build -t krystiandzydzy/memoryCpu:1.0 .'
+                    sh 'docker build -t krystiandzydzy/memorycpu:1.0 .'
                 }
 
             }
@@ -20,7 +20,7 @@ pipeline
         stage('Deploy') {
             steps {
                 script{
-                    sh 'docker push krystiandzydzy/memoryCpu:1.0'
+                    sh 'docker push krystiandzydzy/memorycpu:1.0'
                 }
             }
         }
