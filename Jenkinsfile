@@ -3,7 +3,7 @@ pipeline
     agent any
 
     stages {
-        stage('Build docker image') {
+        stage('Build stage') {
             steps {
                  
                 script{
@@ -13,12 +13,12 @@ pipeline
 
             }
         }
-            stage('Test') {
+            stage('Test stage') {
             steps {
                 sh 'python3 tests.py'
             }
         }   
-        stage('Deploy') {
+        stage('Deploy stage') {
             steps {
                 script{
                    // sh 'docker login -u krystiandzydzy -p KrDz2020#'
@@ -27,7 +27,7 @@ pipeline
                 }
             }
         }
-        stage("czyszczenie"){
+        stage("Cleaning stage"){
             steps{
                 sh 'docker logout'
             }
