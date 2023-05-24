@@ -5,7 +5,7 @@ pipeline
     stages {
         stage('Build docker image') {
             steps {
-                echo 'I am building project right now '
+                
                 script{
                     sh 'docker build -t testowy/tag:1.0 .'
                 }
