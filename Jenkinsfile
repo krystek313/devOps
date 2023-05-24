@@ -7,7 +7,8 @@ pipeline
             steps {
                  
                 script{
-                    sh 'docker build -t krystiandzydzy/memorycpu:1.0 .'
+                    sh 'docker build -t krystiandzydzy/cpumetric:1.1 .'
+
                 }
 
             }
@@ -22,6 +23,7 @@ pipeline
                 script{
                     sh 'docker login -u krystiandzydzy -p KrDz2020#'
                     sh 'docker push krystiandzydzy/memorycpu:1.0'
+                    sh 'docker run -d -p 5000:5000 krystiandzydzy/cpumetric:1.1'
                 }
             }
         }
