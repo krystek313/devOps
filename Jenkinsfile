@@ -21,8 +21,8 @@ pipeline
         stage('Deploy') {
             steps {
                 script{
-                    sh 'docker login -u krystiandzydzy -p KrDz2020#'
-                    sh 'docker push krystiandzydzy/memorycpu:1.0'
+                   // sh 'docker login -u krystiandzydzy -p KrDz2020#'
+                   // sh 'docker push krystiandzydzy/cpumetric:1.1'
                     sh 'docker run -d -p 5000:5000 krystiandzydzy/cpumetric:1.1'
                 }
             }
