@@ -14,7 +14,7 @@ pipeline
         }
             stage('Test') {
             steps {
-                
+                echo 'teraz lepiej ?'
             }
         }   
         stage('Deploy') {
