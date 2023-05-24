@@ -5,7 +5,7 @@ pipeline
     stages {
         stage('Build docker image') {
             steps {
-                
+                 
                 script{
                     sh 'docker build -t testowy/tag:1.0 .'
                 }
