@@ -7,8 +7,8 @@ pipeline
             steps {
                  
                 script{
-                    //sh 'docker build -t krystiandzydzy/cpumetric:1.1 .'
-                    echo "robie build"
+                    sh 'docker build -t krystiandzydzy/cpumetric:1.2 .'
+                    //echo "robie build"
                 }
 
             }
@@ -22,9 +22,9 @@ pipeline
         stage('Deploy stage') {
             steps {
                 script{
-                    sh 'docker login -u krystiandzydzy -p dckr_pat_m3CDMNqUUpD1WNUpnA5LPHSfy2o'
+                    //sh 'docker login -u krystiandzydzy -p dckr_pat_m3CDMNqUUpD1WNUpnA5LPHSfy2o'
                     sh 'docker push krystiandzydzy/cpumetric:1.1'
-                    sh 'docker run -d -p 5000:5000 krystiandzydzy/cpumetric:1.1'
+                    sh 'docker run -d -p 5000:5000 krystiandzydzy/cpumetric:1.2'
                 }
             }
         }
