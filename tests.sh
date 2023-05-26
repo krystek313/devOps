@@ -1,5 +1,5 @@
 #!/bin/bash
-if  cat '/home/admine/.docker/config.json' | grep docker
+if  cat /home/admine/.docker/config.json | grep docker
 then echo "DockerHub jest zalogowany"
 else 
 echo "Logowanie do DockerHuba"  
