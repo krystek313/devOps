@@ -8,7 +8,7 @@ pipeline
                  
                 script{
                     //sh 'docker build -t krystiandzydzy/cpumetric:1.1 .'
-
+                    echo "robie build"
                 }
 
             }
