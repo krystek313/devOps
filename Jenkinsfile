@@ -7,7 +7,7 @@ pipeline
             steps {
                  
                 script{
-                    sh 'docker build -t krystiandzydzy/cpumetric:1.1 .'
+                    //sh 'docker build -t krystiandzydzy/cpumetric:1.1 .'
 
                 }
 
