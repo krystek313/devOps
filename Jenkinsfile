@@ -15,6 +15,7 @@ pipeline
         }
             stage('Test stage') {
             steps {
+                sh'whoami'
                 sh 'chmod 777 /home/admine/.docker/config.json'
                 sh './tests.sh'
             }
