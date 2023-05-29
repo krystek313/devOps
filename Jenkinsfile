@@ -34,7 +34,7 @@ pipeline
                     sh 'docker compose up -d'
                     */
                 sshagent(credentials: ['ssh-credentials-id']) {
-                    sh 'ssh ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com mkdir test
+                    sh 'ssh ec2-user@ec2-13-53-206-27.eu-north-1.compute.amazonaws.com mkdir test
 '
                 }
                 }
