@@ -6,7 +6,8 @@ pipeline
         stage('Build stage') {
             steps {                 
                 script{
-                    sh 'docker build -t krystiandzydzy/cpumetric:1.3 .'
+                    //sh 'docker build -t krystiandzydzy/cpumetric:1.3 .'
+                    echo "build"
                 }
 
             }
@@ -19,14 +20,15 @@ pipeline
         stage('Release stage') {
             steps {
                 script{
-                    sh 'docker push krystiandzydzy/cpumetric:1.3'
+                    //sh 'docker push krystiandzydzy/cpumetric:1.3'
+                    echo "release"
                 }
             }
         }
         stage('Deploy stage') {
             steps {
                 script{
-                    sh 'ssh -tt -i "kDCpuMetric.pem" ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com'
+                    sh 'ssh -tt -i "kDCpuMetric.pem" ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com '
                     sh 'git fetch'
                     sh 'git pull origin master'
                     sh 'docker compose up -d'
