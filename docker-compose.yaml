@@ -1,0 +1,5 @@
+services:  
+  cpumetric:
+    image: "krystiandzydzy/cpumetric:1.2"
+    ports:
+    - "80:5000"
