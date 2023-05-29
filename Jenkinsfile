@@ -15,7 +15,7 @@ pipeline
             steps {               
                 sh './tests.sh'
             }
-        }   
+        }    
         stage('Release stage') {
             steps {
                 script{
