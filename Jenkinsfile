@@ -27,12 +27,18 @@ pipeline
         }
         stage('Deploy stage') {
             steps {
-                script{
+               /* script{
                     sh 'ssh -tt -i "kDCpuMetric.pem" ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com '
                     sh 'git fetch'
                     sh 'git pull origin master'
                     sh 'docker compose up -d'
+                    */
+                sshagent(credentials: ['ssh-credentials-id']) {
+                    sh 'ssh ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com mkdir test
+'
                 }
+                }
+
             }
         }
         stage("Cleaning stage"){
