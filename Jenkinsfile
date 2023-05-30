@@ -28,10 +28,15 @@ pipeline
         stage('Deploy stage') {
             steps {
                 script{
-                    sh 'ssh -tt -i "kDCpuMetric.pem" ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com '
+                    sshagent(['ec2_connector']) {
+                        // some block
+                        sh 'ssh -o StrictHostKeyCheckin=no -l ec2_user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com uname -a'
+                    }
+                    /*sh 'ssh -tt -i "kDCpuMetric.pem" ec2-user@ec2-16-170-201-13.eu-north-1.compute.amazonaws.com '
                     sh 'git fetch'
                     sh 'git pull origin master'
                     sh 'docker compose up -d'
+                    */
                 }
             }
         }
