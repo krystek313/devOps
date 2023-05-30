@@ -28,9 +28,11 @@ pipeline
         stage('Deploy stage') {
             steps {
                 script{                    
+                        sshagent(['ec2_connection']) {
+                            sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com ls -la"
+                            sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com whoami"
+                        }
                         
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com ls -la"
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com whoami"
                     
                 }
             }
