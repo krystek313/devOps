@@ -30,7 +30,7 @@ pipeline
                 script{                    
                         sshagent(['ec2_connection']) {
                            // sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com cd /home/ec2-user/devOps && git fetch && git pull origin master && docker compose up -d"
-                            sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com touch /home/ec2-user/devOps/abafa.txt"
+                            sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com /home/ec2-user/devOps/deployImages.sh"
                             //sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com docker compose up -d"
                         }
                         
