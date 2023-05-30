@@ -29,6 +29,7 @@ pipeline
             steps {
                 script{                    
                         sshagent(['ec2_connection']) {
+                            sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com cd /home/ec2-user/devOps"
                             sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com git fetch && git pull origin master"
                             sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com docker compose up -d"
                         }
