@@ -30,6 +30,7 @@ pipeline
                 script{
                     sshagent(['ec2_connector']) {
                         // some block
+                        sh "chmod 400 kDCpuMetric.pem"
                         sh "ssh -tt -i kDCpuMetric.pem ec2_user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com mkdir test"
                         sh "ssh -o StrictHostKeyChecking=no ec2_user@ec2-13-48-193-52.eu-north-1.compute.amazonaws.com uname -a"
                     }
