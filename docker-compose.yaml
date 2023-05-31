@@ -1,6 +1,6 @@
 services:  
   cpumetric:
-    image: "krystiandzydzy/cpumetric:${VERSION}"
+    image: krystiandzydzy/cpumetric:${VERSION}
     container_name: cpumetric
     ports:
     - "80:5000"
