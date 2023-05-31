@@ -5,13 +5,14 @@ pipeline
     environment {
         AWS_SERVER = 'ec2-13-53-119-183.eu-north-1.compute.amazonaws.com'
         AWS_USER   = 'ec2-user'
+        APP_VERSION = '1.4'
     }
 
     stages {
         stage('Build stage') {
             steps {                 
                 script{
-                    //sh 'docker build -t krystiandzydzy/cpumetric:1.3 .'
+                    sh "docker build -t krystiandzydzy/cpumetric:${APP_VERSION} ."
                     echo "build"
                 }
 
@@ -25,7 +26,7 @@ pipeline
         stage('Release stage') {
             steps {
                 script{
-                    //sh 'docker push krystiandzydzy/cpumetric:1.3'
+                    sh "docker push krystiandzydzy/cpumetric:${APP_VERSION}"
                     echo "release"
                 }
             }
