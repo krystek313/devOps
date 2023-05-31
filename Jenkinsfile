@@ -4,7 +4,7 @@ pipeline
 
     environment {
         AWS_SERVER = 'ec2-13-53-119-183.eu-north-1.compute.amazonaws.com'
-        AWS   = 'ec2-user'
+        AWS_USER   = 'ec2-user'
     }
 
     stages {
