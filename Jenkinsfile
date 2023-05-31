@@ -35,7 +35,7 @@ pipeline
             steps {
                 script{                    
                         sshagent(['ec2_connection']) {
-                            sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/helloWorldPipe/docker-compose.yaml ${AWS_USER}@${AWS_SERVER}:/home/ec2-user/devOps"
+                            sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/helloWorldPipe/docker-compose.yaml .env ${AWS_USER}@${AWS_SERVER}:/home/ec2-user/devOps"
                             sh "ssh -o StrictHostKeyChecking=no ${AWS_USER}@${AWS_SERVER} chmod +x /home/ec2-user/devOps/docker-compose.yaml"
                             sh "ssh -o StrictHostKeyChecking=no ${AWS_USER}@${AWS_SERVER} docker-compose -f /home/ec2-user/devOps/docker-compose.yaml up -d"                            
                         }
