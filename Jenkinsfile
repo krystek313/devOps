@@ -3,7 +3,7 @@ pipeline
     agent any
 
     environment {
-        AWS_SERVER = 'ec2-13-53-119-183.eu-north-1.compute.amazonaws.com'
+        AWS_SERVER = 'ec2-13-53-40-145.eu-north-1.compute.amazonaws.com'
         AWS_USER   = 'ec2-user'
         APP_VERSION = 'v1.6'
     }
